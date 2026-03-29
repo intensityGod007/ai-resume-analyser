@@ -1,32 +1,48 @@
-# Welcome to React Router!
+# CVision AI - AI Resume Analyser
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A modern, full-stack application that provides smart, AI-powered feedback for your resume to help you land your dream job! CVision AI tracks your applications and rates your resumes to ensure you're putting your best foot forward.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## 🎯 Objectives
 
-## Features
+- **Smart Resume Feedback**: Upload your resume and instantly receive AI-generated insights and ratings.
+- **Application Tracking**: Keep a history of your uploaded resumes and their performance over time.
+- **Serverless & Seamless**: Fully powered by [Puter.js](https://puter.com) for authentication, database (KV store), and AI integration without the hassle of managing servers.
+- **User-friendly Interface**: A clean, modern UI built with React Router 7 and Tailwind CSS.
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## ✨ Features
 
-## Getting Started
+- 🔐 Secure Authentication (via Puter)
+- 📄 Seamless Resume Uploads (PDF support via `react-dropzone` and `pdfjs-dist`)
+- 🤖 AI-Powered Analysis and Rating
+- 📊 Dashboard to track all your resumes
+- ⚡️ Fast, optimized performance with React Router 7
+
+## 🛠️ Tech Stack
+
+- **Framework**: [React Router 7](https://reactrouter.com/) (formerly Remix)
+- **UI & Styling**: [Tailwind CSS v4](https://tailwindcss.com/), `clsx`, `tailwind-merge`
+- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
+- **Backend & AI Ecosystem**: [Puter.js](https://docs.puter.com)
+  - Auth: `puter.auth`
+  - Database: `puter.kv`
+  - AI: `puter.ai.chat`
+- **File Utilities**: `pdfjs-dist`, `react-dropzone`
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure you have Node.js installed. Note that this project uses Puter.js for backend services, which works out-of-the-box in the browser.
 
 ### Installation
 
-Install the dependencies:
+1. Clone the repository and install dependencies:
 
 ```bash
 npm install
 ```
 
-### Development
-
-Start the development server with HMR:
+2. Start the development server:
 
 ```bash
 npm run dev
@@ -34,54 +50,28 @@ npm run dev
 
 Your application will be available at `http://localhost:5173`.
 
-## Building for Production
+### Building for Production
 
-Create a production build:
+Create an optimized production build:
 
 ```bash
 npm run build
 ```
 
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
+You can preview the built app using:
 ```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
+npm run start
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
+## 📂 Project Structure
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
+- `app/routes/` - File-based routing for the application (`home.tsx`, `upload.tsx`, `resume.tsx`, etc.)
+- `app/components/` - Reusable UI components (`Navbar.tsx`, `ResumeCard.tsx`, etc.)
+- `app/lib/` - Utility functions and store setup (`puter.ts` for Puter integration)
 
-### DIY Deployment
 
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
+## 🖼️ Screenshots
 
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+![Home Page](/public/images/ss-1.png)
+![Upload Page](/public/images/ss-3.png)
+![Review Page](/public/images/ss-2.png)
